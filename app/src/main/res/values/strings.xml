@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LongLat</string>
+    <string name="title_activity_mapapi">Map</string>
+</resources>
