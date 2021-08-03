@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
     @ExperimentalCoroutinesApi
     private fun initListener()
     {
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener, android.widget.SearchView.OnQueryTextListener {
+       (object : SearchView.OnQueryTextListener, android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query?.let { weatherViewModel.setSearchQuery(it) }
                 Log.d("main", "onQueryTextChange: $query")

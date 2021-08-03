@@ -1,9 +1,9 @@
 package com.example.longlat.Network
 
 import com.example.longlat.Model.City
+import javax.inject.Inject
 
-class ApiServicelmp constructor(private  val apiService: ApiService){
+class ApiServiceImp @Inject constructor(private val apiService: ApiService) {
 
-    suspend fun  getCityData(city:String,appId:String): City =
-        apiService.getCityData(city,appId)
+    suspend fun getCity(city:String,appId:String):City = apiService.getCityData(city,appId)
 }

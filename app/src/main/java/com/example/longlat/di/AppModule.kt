@@ -4,14 +4,14 @@ import com.example.longlat.Network.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.internal.managers.ApplicationComponentManager
+import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 
 @Module
-@InstallIn(ApplicationComponentManager::class)
+@InstallIn(SingletonComponent::class)
 class AppModule {
 
     @Provides
@@ -26,6 +26,6 @@ class AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     @Provides
-    fun getApiSevice(retrofit: Retrofit):ApiService =
+    fun getApiService(retrofit: Retrofit):ApiService =
         retrofit.create(ApiService::class.java)
 }
